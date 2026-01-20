@@ -67,15 +67,7 @@ function AppContent() {
                 sequential
                 revealDirection="start"
               />
-              <span className="gradient-text">
-                <DecryptedText 
-                  text="web aplikacijų"
-                  animateOn="view"
-                  speed={70}
-                  sequential
-                  revealDirection="start"
-                />
-              </span>
+              <span className="gradient-text">web aplikacijų</span>
               <br />
               <DecryptedText 
                 text="kūrimas - tai skirtingos emocijos"

@@ -113,41 +113,40 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #E8D5C4 0%, #C9A882 50%, #D4A574 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  animation: gradient-shift 3s ease infinite;
-  background-size: 200% 200%;
-  /* Fallback color - matomas jei animacija fail'ina */
+  /* Primary solid color - ALWAYS visible */
   color: #E8D5C4;
-  /* Better rendering */
-  will-change: background-position;
+  font-weight: 900;
+  display: inline-block;
+  position: relative;
 }
 
-/* Ensure visibility on mobile */
-@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+/* Gradient overlay only on supporting browsers */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
   .gradient-text {
-    color: #E8D5C4;
-    -webkit-text-fill-color: #E8D5C4;
-  }
-}
-
-/* Reduce animation on slower devices */
-@media (prefers-reduced-motion: reduce) {
-  .gradient-text {
-    animation: none;
     background: linear-gradient(135deg, #E8D5C4 0%, #C9A882 50%, #D4A574 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+    will-change: background-position;
   }
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .gradient-text {
-    /* Simpler gradient for mobile */
-    background: linear-gradient(135deg, #E8D5C4 0%, #C9A882 100%);
-    background-size: 100% 100%;
+  
+  /* Disable animation on mobile for better performance */
+  @media (max-width: 768px) {
+    .gradient-text {
+      background: linear-gradient(135deg, #E8D5C4 0%, #C9A882 100%);
+      background-size: 100% 100%;
+      animation: none;
+    }
+  }
+  
+  /* Reduce motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-text {
+      animation: none;
+      background-position: 0% 50%;
+    }
   }
 }
 
