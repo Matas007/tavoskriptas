@@ -1,0 +1,221 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #2a1f15;
+  background-image:
+    radial-gradient(at 88% 40%, #2a1f15 0px, transparent 85%),
+    radial-gradient(at 49% 30%, #2a1f15 0px, transparent 85%),
+    radial-gradient(at 14% 26%, #2a1f15 0px, transparent 85%),
+    radial-gradient(at 0% 64%, #9D7852 0px, transparent 85%),
+    radial-gradient(at 41% 94%, #E8D5C4 0px, transparent 85%),
+    radial-gradient(at 100% 99%, #D4A574 0px, transparent 85%);
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(201, 168, 130, 0.2);
+}
+
+.footer-magnet-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #E8D5C4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-item:hover {
+  color: #C9A882;
+}
+
+.footer-contact-icon {
+  font-size: 1.25rem;
+  color: #C9A882;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 130, 0.3);
+  border-radius: 50%;
+  color: #E8D5C4;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-social-link:hover {
+  background: rgba(201, 168, 130, 0.2);
+  border-color: rgba(201, 168, 130, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(201, 168, 130, 0.3);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(201, 168, 130, 0.2);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-content {
+    gap: 2rem;
+  }
+
+  .footer-social-link {
+    width: 42px;
+    height: 42px;
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-center {
+    gap: 0.65rem;
+  }
+
+  .footer-contact-item {
+    font-size: 0.95rem;
+  }
+
+  .footer-right {
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .footer-magnet-bg {
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footer-logo-text {
+    font-size: 1.1rem;
+  }
+
+  .footer-contact-item {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact-icon {
+    font-size: 1.1rem;
+  }
+
+  .footer-social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+}
+

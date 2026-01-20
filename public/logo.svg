@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <g transform="translate(80, 100)">
+    <!-- T -->
+    <path d="M0 20 L100 20 L100 40 L60 40 L60 140 L40 140 L40 40 L0 40 Z" fill="#C9A882"/>
+    
+    <!-- S curve -->
+    <path d="M110 20 Q140 20 150 40 Q160 60 150 80 Q140 100 120 100 Q140 100 150 120 Q160 140 150 160 Q140 180 110 180" 
+          stroke="#C9A882" stroke-width="20" fill="none" stroke-linecap="round"/>
+    
+    <!-- Code bracket -->
+    <path d="M200 60 L220 60 M220 80 L240 100 L220 120 M220 120 L200 120" 
+          stroke="#D4A574" stroke-width="6" stroke-linecap="round" fill="none"/>
+    
+    <!-- Vertical line -->
+    <path d="M210 140 L210 220" 
+          stroke="#D4A574" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>
+
