@@ -131,16 +131,18 @@
     animation: gradient-shift 3s ease infinite;
     will-change: background-position;
   }
-  
-  /* Disable animation on mobile for better performance */
+
+  /* Mobile: force solid color to avoid invisible text on iOS */
   @media (max-width: 768px) {
     .gradient-text {
-      background: linear-gradient(135deg, #E8D5C4 0%, #C9A882 100%);
-      background-size: 100% 100%;
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      -webkit-text-fill-color: currentColor;
       animation: none;
     }
   }
-  
+
   /* Reduce motion preference */
   @media (prefers-reduced-motion: reduce) {
     .gradient-text {
