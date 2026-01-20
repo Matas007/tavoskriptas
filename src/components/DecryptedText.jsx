@@ -123,7 +123,9 @@ export default function DecryptedText({
             } else {
               clearInterval(interval);
               setIsScrambling(false);
-              return prevRevealed;
+              setDisplayText(text);
+              // Ensure all indices are revealed
+              return new Set(Array.from({ length: text.length }, (_, i) => i));
             }
           } else {
             setDisplayText(shuffleText(text, prevRevealed));
@@ -132,6 +134,8 @@ export default function DecryptedText({
               clearInterval(interval);
               setIsScrambling(false);
               setDisplayText(text);
+              // Ensure all indices are revealed
+              return new Set(Array.from({ length: text.length }, (_, i) => i));
             }
             return prevRevealed;
           }
@@ -151,11 +155,22 @@ export default function DecryptedText({
   useEffect(() => {
     if (animateOn !== 'view' && animateOn !== 'both') return;
 
+    let completionTimeout;
+
     const observerCallback = entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !hasAnimated) {
           setIsHovering(true);
           setHasAnimated(true);
+          
+          // Fallback: ensure animation completes after expected duration
+          const expectedDuration = (sequential ? text.length * speed : maxIterations * speed) + 1000;
+          completionTimeout = setTimeout(() => {
+            setIsScrambling(false);
+            setDisplayText(text);
+            setRevealedIndices(new Set(Array.from({ length: text.length }, (_, i) => i)));
+            setIsHovering(false);
+          }, expectedDuration);
         }
       });
     };
@@ -176,8 +191,11 @@ export default function DecryptedText({
       if (currentRef) {
         observer.unobserve(currentRef);
       }
+      if (completionTimeout) {
+        clearTimeout(completionTimeout);
+      }
     };
-  }, [animateOn, hasAnimated]);
+  }, [animateOn, hasAnimated, text, speed, maxIterations, sequential]);
 
   const hoverProps =
     animateOn === 'hover' || animateOn === 'both'
@@ -189,14 +207,14 @@ export default function DecryptedText({
 
   return (
     <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...hoverProps} {...props}>
-      <span style={styles.srOnly}>{displayText}</span>
+      <span style={styles.srOnly}>{text}</span>
 
-      <span aria-hidden="true">
+      <span aria-hidden="true" className={className}>
         {displayText.split('').map((char, index) => {
-          const isRevealedOrDone = revealedIndices.has(index) || !isScrambling || !isHovering;
+          const isRevealedOrDone = revealedIndices.has(index) || !isScrambling;
 
           return (
-            <span key={index} className={isRevealedOrDone ? className : encryptedClassName}>
+            <span key={index} className={isRevealedOrDone ? '' : encryptedClassName}>
               {char}
             </span>
           );
