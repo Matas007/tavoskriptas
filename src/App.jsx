@@ -49,7 +49,7 @@ function AppContent() {
         <BubbleMenu
           menuBg="rgba(232, 213, 196, 0.95)"
           menuContentColor="#2a1f15"
-          useFixedPosition={false}
+          useFixedPosition={true}
           animationEase="back.out(1.5)"
           animationDuration={0.5}
           staggerDelay={0.12}
