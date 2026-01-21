@@ -48,18 +48,6 @@ export default function BookingForm() {
         (data || []).forEach(booking => {
           const bookedTime = booking.booking_time.substring(0, 5); // "14:30:00" -> "14:30"
           blockedSlots.add(bookedTime);
-
-          const [hours, minutes] = bookedTime.split(':').map(Number);
-          let nextMinutes = minutes + 30;
-          let nextHours = hours;
-
-          if (nextMinutes >= 60) {
-            nextMinutes -= 60;
-            nextHours += 1;
-          }
-
-          const nextSlot = `${nextHours.toString().padStart(2, '0')}:${nextMinutes.toString().padStart(2, '0')}`;
-          blockedSlots.add(nextSlot);
         });
 
         setBookedTimes(Array.from(blockedSlots));
@@ -122,19 +110,9 @@ export default function BookingForm() {
 
       if (checkError) throw checkError;
 
-      // Check if selected time or next 30min slot is already booked
+      // Check if selected time is already booked
       if (existingBookings && existingBookings.length > 0) {
         const selectedTime = formData.booking_time;
-        const [hours, minutes] = selectedTime.split(':').map(Number);
-        
-        // Calculate previous 30min slot (someone might have booked it)
-        let prevMinutes = minutes - 30;
-        let prevHours = hours;
-        if (prevMinutes < 0) {
-          prevMinutes = 30;
-          prevHours -= 1;
-        }
-        const prevSlot = `${prevHours.toString().padStart(2, '0')}:${prevMinutes.toString().padStart(2, '0')}`;
 
         for (const booking of existingBookings) {
           const bookedTime = booking.booking_time.substring(0, 5); // "14:30:00" -> "14:30"
@@ -142,13 +120,6 @@ export default function BookingForm() {
           // Check if the exact time is booked
           if (bookedTime === selectedTime) {
             setError(`❌ Laikas ${selectedTime} jau užimtas! Pasirinkite kitą laiką.`);
-            setLoading(false);
-            return;
-          }
-          
-          // Check if someone booked 30min before (their booking blocks our slot)
-          if (bookedTime === prevSlot) {
-            setError(`❌ Laikas ${selectedTime} jau užimtas (aptarimas prasidėjo ${prevSlot})! Pasirinkite kitą laiką.`);
             setLoading(false);
             return;
           }
