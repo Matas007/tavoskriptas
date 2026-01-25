@@ -25,6 +25,7 @@ const ProjectsPage = () => {
         <div className="projects-typing-container">
           <span className="static-text">Atliekame </span>
           <TextType 
+            as="span"
             text={changingTexts}
             typingSpeed={75}
             pauseDuration={1500}
