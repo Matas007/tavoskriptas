@@ -7,7 +7,7 @@ const ProjectsPage = () => {
     "specifikavimą",
     "projektavimą",
     "testavimą",
-    "kad Jūsų projektas būtų sklandžiai įgyvendintas"
+    ", kad Jūsų projektas būtų sklandžiai įgyvendintas"
   ];
 
   return (
