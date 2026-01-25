@@ -2,11 +2,12 @@ import TextType from './TextType';
 import './ProjectsPage.css';
 
 const ProjectsPage = () => {
-  const projectTexts = [
-    "Atliekame informacijos rinkimą savo projektams",
-    "Atliekame specifikavimą savo projektams",
-    "Atliekame projektavimą savo projektams",
-    "Atliekame testavimą savo projektams"
+  const changingTexts = [
+    "informacijos rinkimą",
+    "specifikavimą",
+    "projektavimą",
+    "testavimą",
+    "kad Jūsų projektas būtų sklandžiai įgyvendintas"
   ];
 
   return (
@@ -15,8 +16,9 @@ const ProjectsPage = () => {
         <h1 className="projects-title">Mūsų Projektai</h1>
         
         <div className="projects-typing-container">
+          <span className="static-text">Atliekame </span>
           <TextType 
-            text={projectTexts}
+            text={changingTexts}
             typingSpeed={75}
             pauseDuration={1500}
             deletingSpeed={50}
