@@ -67,22 +67,9 @@ function AppContent() {
             />
             <div className="content">
             <h1 className="title">
-              <DecryptedText 
-                text="Daugiau nei "
-                animateOn="view"
-                speed={80}
-                sequential
-                revealDirection="start"
-              />
-              <span className="gradient-text">web aplikacijų</span>
+              Daugiau nei <span className="gradient-text">web aplikacijų</span>
               <br />
-              <DecryptedText 
-                text="kūrimas - tai skirtingos emocijos"
-                animateOn="view"
-                speed={60}
-                sequential
-                revealDirection="start"
-              />
+              kūrimas - tai skirtingos emocijos
             </h1>
             <p className="subtitle">
               <DecryptedText 
