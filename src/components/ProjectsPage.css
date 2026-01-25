@@ -184,7 +184,7 @@
   .projects-typing-container {
     height: 120px;
     padding: 1.5rem;
-    gap: 0.3rem;
+    gap: 0;
     justify-content: flex-start;
     text-align: left;
     overflow: hidden;
