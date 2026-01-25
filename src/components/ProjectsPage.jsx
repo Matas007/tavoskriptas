@@ -15,7 +15,7 @@ const ProjectsPage = () => {
     <>
       <SEO 
         title="Mūsų Projektai - Tavo Skriptas"
-        description="Sužinokite, kaip mes dirbame: nuo informacijos rinkimo iki testavimo. Profesionalus projektų valdymas."
+        description="Internetinių svetainių ir mobiliųjų aplikacijų kūrimas, duomenų valdymas"
         keywords="projektų valdymas, informacijos rinkimas, specifikavimas, projektavimas, testavimas, Tavo Skriptas"
       />
       <div className="projects-page">

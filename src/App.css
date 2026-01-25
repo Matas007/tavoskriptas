@@ -439,6 +439,11 @@
   .title {
     font-size: clamp(2rem, 10vw, 3rem);
   }
+
+  .subtitle {
+    min-height: 2.5rem;
+    margin-bottom: 2rem;
+  }
   
   .buttons {
     flex-direction: column;

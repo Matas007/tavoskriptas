@@ -182,8 +182,8 @@
   }
 
   .projects-typing-container {
-    min-height: 150px;
-    padding: 1.5rem;
+    min-height: 100px;
+    padding: 1rem 1rem;
   }
 
   .projects-grid {
