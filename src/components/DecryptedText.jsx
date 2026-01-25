@@ -6,6 +6,11 @@ const styles = {
     display: 'inline-block',
     whiteSpace: 'pre-wrap'
   },
+  char: {
+    display: 'inline-block',
+    minWidth: '0.5ch',
+    textAlign: 'center'
+  },
   srOnly: {
     position: 'absolute',
     width: '1px',
@@ -214,7 +219,11 @@ export default function DecryptedText({
           const isRevealedOrDone = revealedIndices.has(index) || !isScrambling;
 
           return (
-            <span key={index} className={isRevealedOrDone ? '' : encryptedClassName}>
+            <span 
+              key={index} 
+              style={styles.char}
+              className={isRevealedOrDone ? '' : encryptedClassName}
+            >
               {char}
             </span>
           );
