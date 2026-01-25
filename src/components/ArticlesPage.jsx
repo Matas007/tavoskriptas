@@ -1,8 +1,15 @@
+import SEO from './SEO';
 import './ArticlesPage.css';
 
 const ArticlesPage = () => {
   return (
-    <div className="articles-page">
+    <>
+      <SEO 
+        title="Straipsniai - Tavo Skriptas"
+        description="Ruošiame įdomaus turinio apie web aplikacijų kūrimą, IT sprendimus ir programavimą."
+        keywords="straipsniai, IT naujienos, programavimo patarimai, web development, Tavo Skriptas"
+      />
+      <div className="articles-page">
       <div className="articles-container">
         <h1 className="articles-title">Straipsniai</h1>
         
@@ -33,6 +40,7 @@ const ArticlesPage = () => {
         <p className="articles-subtitle">Ruošiame įdomaus turinio jums</p>
       </div>
     </div>
+    </>
   );
 };
 

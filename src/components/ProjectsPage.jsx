@@ -1,4 +1,5 @@
 import TextType from './TextType';
+import SEO from './SEO';
 import './ProjectsPage.css';
 
 const ProjectsPage = () => {
@@ -11,7 +12,13 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <div className="projects-page">
+    <>
+      <SEO 
+        title="Mūsų Projektai - Tavo Skriptas"
+        description="Sužinokite, kaip mes dirbame: nuo informacijos rinkimo iki testavimo. Profesionalus projektų valdymas."
+        keywords="projektų valdymas, informacijos rinkimas, specifikavimas, projektavimas, testavimas, Tavo Skriptas"
+      />
+      <div className="projects-page">
       <div className="projects-container">
         <h1 className="projects-title">Mūsų Projektai</h1>
         
@@ -64,6 +71,7 @@ const ProjectsPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

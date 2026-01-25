@@ -9,6 +9,7 @@ import ProjectsPage from './components/ProjectsPage';
 import ArticlesPage from './components/ArticlesPage';
 import DecryptedText from './components/DecryptedText';
 import Footer from './components/Footer';
+import SEO from './components/SEO';
 import './App.css';
 
 function AppContent() {
@@ -58,7 +59,13 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={
-          <div className="content">
+          <>
+            <SEO 
+              title="Tavo Skriptas - Web aplikacijų kūrimas ir IT sprendimai"
+              description="Kuriame modernias web aplikacijas ir interaktyvius IT sprendimus, reaguojančius į vartotojo veiksmus."
+              keywords="web aplikacijos, IT sprendimai, programavimas, web development, Lietuva, Tavo Skriptas, aplikacijų kūrimas, React, modernios technologijos"
+            />
+            <div className="content">
             <h1 className="title">
               <DecryptedText 
                 text="Daugiau nei "
@@ -170,6 +177,7 @@ function AppContent() {
               </Link>
             </div>
           </div>
+          </>
         } />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />

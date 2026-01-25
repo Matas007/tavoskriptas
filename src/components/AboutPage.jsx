@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
+import SEO from './SEO';
 import './AboutPage.css';
 
 export default function AboutPage() {
   return (
-    <main className="about-page">
+    <>
+      <SEO 
+        title="Apie Mus - Tavo Skriptas"
+        description="Sužinokite apie Tavo Skriptas misiją, vertybes ir kaip padedame verslams dominuoti skaitmeninėje erdvėje."
+        keywords="apie mus, Tavo Skriptas, web kūrimo misija, IT sprendimai, verslo skaitmeninimas"
+      />
+      <main className="about-page">
       <div className="about-card uiverse-card">
         <div className="card__border" aria-hidden="true" />
         <div className="card_title__container">
@@ -78,6 +85,7 @@ export default function AboutPage() {
         </Link>
       </div>
     </main>
+    </>
   );
 }
 
