@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import LiquidEther from './LiquidEther';
 import BubbleMenu from './BubbleMenu';
 import BookingForm from './components/BookingForm';
@@ -19,6 +20,10 @@ function AppContent() {
   const isProjects = location.pathname === '/projects';
   const isArticles = location.pathname === '/articles';
   const showFooter = isHome || isAbout || isProjects || isArticles;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   return (
     <div className="app">
