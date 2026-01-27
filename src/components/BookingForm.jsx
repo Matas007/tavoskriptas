@@ -25,6 +25,7 @@ export default function BookingForm() {
   
   // Refs for scrolling
   const timePickerRef = useRef(null);
+  const cardRef = useRef(null);
 
   // Fetch booked times when date is selected
   useEffect(() => {
@@ -61,6 +62,12 @@ export default function BookingForm() {
 
     fetchBookedTimes();
   }, [formData.booking_date]);
+
+  // Scroll to top when switching steps (prevents staying at bottom)
+  useEffect(() => {
+    if (!cardRef.current) return;
+    cardRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
 
   // Generate time slots
   const timeSlots = [];
@@ -203,7 +210,7 @@ export default function BookingForm() {
 
   return (
     <div className="booking-form-container">
-      <div className="booking-form-card">
+      <div className="booking-form-card" ref={cardRef}>
         <Link to="/" className="close-button" aria-label="Grįžti į pagrindinį">
           ✕
         </Link>
