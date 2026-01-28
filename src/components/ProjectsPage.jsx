@@ -22,6 +22,8 @@ const ProjectsPage = () => {
       <div className="projects-container">
         <h1 className="projects-title">Mūsų Projektai</h1>
         
+        {/* Temporarily disabled typing section */}
+        {/*
         <div className="projects-typing-container">
           <span className="static-text">Atliekame </span>
           <TextType 
@@ -36,6 +38,7 @@ const ProjectsPage = () => {
             className="projects-text-type"
           />
         </div>
+        */}
 
         <div className="projects-description">
           <h2>Kaip mes dirbame</h2>
