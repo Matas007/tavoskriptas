@@ -78,7 +78,7 @@ function AppContent() {
             </h1>
             <p className="subtitle">
               <DecryptedText 
-                text="Interaktyvūs sprendimai, reaguojantys į vartotojo veiksmus"
+                text={"Interaktyvūs sprendimai, reaguojantys į\ nvartotojo veiksmus"}
                 animateOn="view"
                 speed={70}
                 sequential
