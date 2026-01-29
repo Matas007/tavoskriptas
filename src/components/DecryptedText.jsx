@@ -216,6 +216,9 @@ export default function DecryptedText({
 
       <span aria-hidden="true" className={className}>
         {displayText.split('').map((char, index) => {
+          if (char === '\n') {
+            return <br key={`br-${index}`} />;
+          }
           const isRevealedOrDone = revealedIndices.has(index) || !isScrambling;
 
           return (
